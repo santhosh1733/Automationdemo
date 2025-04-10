@@ -6,21 +6,22 @@ import org.openqa.selenium.WebDriver;
 import org.testng.Assert;
 import org.testng.AssertJUnit;
 import org.testng.Reporter;
+import org.testng.annotations.Listeners;
 import org.testng.annotations.Test;
 
 import com.automationdemo.generic.Baseclass;
 import com.automationdemo.pom.Alertpage;
 import com.automationdemo.pom.SwitchToPage;
-
+@Listeners(com.automationdemo.generic.Listenerimplementation.class)
 public class AlertModule extends Baseclass{
- 
+ @Test
    public void confirmbox() {
 	   SwitchToPage s=new SwitchToPage(driver);
 		s.setAlertpage();
 		Alertpage a=new Alertpage(driver);
 		 a.setconfirmbox();
    }
-   @Test
+  @Test
 	public void  setpromptbox() {
 		SwitchToPage s=new SwitchToPage(driver);
 		s.setAlertpage();

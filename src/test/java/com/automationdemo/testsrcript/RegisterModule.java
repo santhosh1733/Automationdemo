@@ -7,12 +7,13 @@ import org.apache.poi.EncryptedDocumentException;
 import org.apache.poi.ss.usermodel.Workbook;
 import org.apache.poi.ss.usermodel.WorkbookFactory;
 import org.testng.Reporter;
+import org.testng.annotations.Listeners;
 import org.testng.annotations.Test;
 
 import com.automationdemo.generic.Baseclass;
 import com.automationdemo.generic.Filelib;
 import com.automationdemo.pom.Registerpage;
-
+@Listeners(com.automationdemo.generic.Listenerimplementation.class)
 public class RegisterModule extends Baseclass{
 	@Test
 	public void registeruser() throws EncryptedDocumentException, IOException{
@@ -29,19 +30,19 @@ public class RegisterModule extends Baseclass{
 		String password = f.getExcelData("RegisterDetails", 1, 11);
 		String confirpassword = f.getExcelData("RegisterDetails", 1, 12);
 		Registerpage r=new Registerpage(driver);
-		
-	    r.setFirstname(firstname);
-	    r.setLastname(lastname);
-	r.setAddress(address);
-	r.setEmailid(emailid);
-	r.setPhonenumber(phonenum);
-	r.setGendermaleradiobuttion(gender);
-	r.sethobbies();
-	r.setSkilldd(skill);
-	r.setdateofbirth(year,month,day);
-	r.setPassword(password);
-	r.setConfirmpassword(confirpassword);
-	r.setSubmitbutton();
+
+		r.setFirstname(firstname);
+		r.setLastname(lastname);
+		r.setAddress(address);
+		r.setEmailid(emailid);
+		r.setPhonenumber(phonenum);
+		r.setGendermaleradiobuttion(gender);
+		r.sethobbies();
+		r.setSkilldd(skill);
+		r.setdateofbirth(year,month,day);
+		r.setPassword(password);
+		r.setConfirmpassword(confirpassword);
+		r.setSubmitbutton();
 	}
 
 }
